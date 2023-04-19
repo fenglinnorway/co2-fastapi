@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for co2-emissions-fastapi on 2023-04-19T12:50:03+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "co2-emissions-fastapi"
+primary_region = "ams"
+
+[build]
+  image = "registry.fly.io/co2-emissions-fastapi"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8000
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
