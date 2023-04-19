@@ -3,11 +3,11 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "co2-emissions-fastapi"
+app = "co2-emissions-app"
 primary_region = "ams"
 
 [build]
-  image = "registry.fly.io/co2-emissions-fastapi"
+  image = "registry.fly.io/co2-emissions-app"
 
 [[services]]
   protocol = "tcp"

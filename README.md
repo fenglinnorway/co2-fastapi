@@ -50,3 +50,8 @@ pytest
 ```
 
 pytest will discover and run the test functions in the main_test.py file.
+
+
+# Fly
+
+https://co2-emissions-app.fly.dev/docs
