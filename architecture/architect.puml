@@ -1,0 +1,19 @@
+@startuml
+!define AWSPUML https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v14.0/Advanced/SVG
+
+actor "Data Sources" as data_sources
+database "Centralized Data\nStorage\n(Database, Data Lake/\nWarehouse)" as data_storage
+entity "Data Ingestion\n& Collection" as data_ingestion
+entity "Data Pre-processing\n& Cleaning" as data_preprocessing
+entity "Anomaly Detection\nModel\n(Statistical, ML, or DL)" as anomaly_detection
+entity "Real-time Monitoring\n& Alerting" as monitoring_alerting
+entity "Dashboard & Analytics\n(for Analysts)" as dashboard
+
+data_sources -down-> data_ingestion
+data_ingestion -down-> data_preprocessing
+data_preprocessing -down-> data_storage
+data_storage -down-> anomaly_detection
+anomaly_detection -down-> monitoring_alerting
+monitoring_alerting -down-> dashboard
+
+@enduml
